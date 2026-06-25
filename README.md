@@ -7,6 +7,14 @@ about you from a short bio you write.
 It uses [Tavus CVI](https://docs.tavus.io/sections/conversational-video-interface/overview-cvi)
 (Conversational Video Interface). For the technical deep-dive see [TAVUS.md](./TAVUS.md).
 
+## Live demo
+
+**Sophie** — AI secretary for Vincent Bommert, deployed at Phase 2:
+[https://ai-video-avatar-3wsj8hecu-vbs-projects-9f1b98c4.vercel.app/](https://ai-video-avatar-3wsj8hecu-vbs-projects-9f1b98c4.vercel.app/)
+
+> Not a personal clone — Sophie is a stock avatar acting as Vincent's professional AI assistant.
+> She answers questions about his profile, skills, and projects in French.
+
 ## The three phases
 
 The build is staged so you prove the concept for free before paying or recording anything.
