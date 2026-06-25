@@ -93,7 +93,7 @@ const server = createServer(async (req, res) => {
           max_call_duration: MAX_MINUTES * 60,
           participant_left_timeout: 120,
           enable_closed_captions: true,
-          language: "english",
+          language: "french",
         },
       });
       if (status >= 300) return send(res, status, { error: "Tavus create failed", detail: body });
