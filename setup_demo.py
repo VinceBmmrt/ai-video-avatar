@@ -189,6 +189,11 @@ def main() -> None:
                 "layers": {
                     "llm": {"model": llm_model},
                     "conversational_flow": {"turn_taking_patience": "low"},
+                    "tts": {
+                        "tts_engine": "cartesia",
+                        "external_voice_id": "a249eaff-1e96-4d2c-b23b-12efa4f66f41",
+                        "tts_model_name": "sonic-3",
+                    },
                 },
             })
             if r.status_code >= 300:
