@@ -7,16 +7,16 @@ type Mode = "text" | "voice" | "video";
 type Line = { role: "you" | "avatar"; text: string };
 
 const STATUS_LABEL: Record<Status, string> = {
-  idle: "Ready",
-  connecting: "Connecting",
-  live: "Live",
-  error: "Error",
+  idle: "Prêt",
+  connecting: "Connexion",
+  live: "En direct",
+  error: "Erreur",
 };
 
 const MODES: { id: Mode; title: string; desc: string; color: string }[] = [
-  { id: "text", title: "Type", desc: "Text in, video out. No mic or camera.", color: "amber" },
-  { id: "voice", title: "Talk", desc: "Speak with your mic — it listens and replies.", color: "blue" },
-  { id: "video", title: "Face to face", desc: "Mic + camera, so it can see and hear you.", color: "purple" },
+  { id: "text", title: "Écrire", desc: "Tapez votre message, Sophie vous répond en vidéo.", color: "amber" },
+  { id: "voice", title: "Parler", desc: "Parlez avec votre micro, Sophie vous écoute et répond.", color: "blue" },
+  { id: "video", title: "Face à face", desc: "Micro + caméra, Sophie vous voit et vous entend.", color: "purple" },
 ];
 
 export default function App() {
@@ -225,7 +225,7 @@ export default function App() {
       <header className="topbar">
         <div className="brand">
           <span className="brand-mark" aria-hidden />
-          <span className="brand-name">Avatar</span>
+          <span className="brand-name">Sophie</span>
         </div>
         <div className={`status status--${status}`}>
           <span className="dot" />
@@ -238,9 +238,9 @@ export default function App() {
         {!showSession ? (
           <section className="hero">
             <h1 className="hero-title">
-              Talk to your <span className="grad">video avatar</span>
+              Parlez à <span className="grad">Sophie</span>
             </h1>
-            <p className="hero-sub">Pick how you'd like to talk to it.</p>
+            <p className="hero-sub">L'assistante IA de Vincent Bommert. Choisissez votre mode.</p>
             <div className="modes">
               {MODES.map((m) => (
                 <button key={m.id} className={`mode-card mode-card--${m.color}`} onClick={() => start(m.id)}>
@@ -256,7 +256,7 @@ export default function App() {
             <div className="session">
               <div className="stage">
                 <video ref={videoRef} className="video" autoPlay playsInline muted />
-                {status === "connecting" && <div className="overlay">Connecting…</div>}
+                {status === "connecting" && <div className="overlay">Connexion…</div>}
                 {mode === "video" && (
                   <video ref={selfVideoRef} className="selfview" autoPlay playsInline muted />
                 )}
@@ -266,13 +266,13 @@ export default function App() {
                 {lines.length === 0 ? (
                   <p className="hint">
                     {mode === "text"
-                      ? "Type a question below to start the conversation."
-                      : "Say hello, or type a question below."}
+                      ? "Posez une question ci-dessous pour démarrer."
+                      : "Dites bonjour, ou posez une question ci-dessous."}
                   </p>
                 ) : (
                   lines.map((l, i) => (
                     <div key={i} className={`bubble bubble--${l.role}`}>
-                      <span className="who">{l.role}</span>
+                      <span className="who">{l.role === "avatar" ? "Sophie" : "Vous"}</span>
                       {l.text}
                     </div>
                   ))
@@ -288,7 +288,7 @@ export default function App() {
                     type="button"
                     onClick={toggleMic}
                   >
-                    {micOn ? "Mic on" : "Mic off"}
+                    {micOn ? "Micro activé" : "Micro désactivé"}
                   </button>
                   {mics.length > 0 && (
                     <select
@@ -313,7 +313,7 @@ export default function App() {
                     type="button"
                     onClick={toggleCam}
                   >
-                    {camOn ? "Camera on" : "Camera off"}
+                    {camOn ? "Caméra activée" : "Caméra désactivée"}
                   </button>
                   {cameras.length > 0 && (
                     <select
@@ -336,15 +336,15 @@ export default function App() {
                   className="composer-input"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  placeholder="Ask me anything…"
+                  placeholder="Posez votre question…"
                   autoFocus
                 />
                 <button className="btn btn-send" type="submit">
-                  Send
+                  Envoyer
                 </button>
               </form>
               <button className="btn btn-ghost" type="button" onClick={() => cleanup()}>
-                End
+                Terminer
               </button>
             </div>
           </div>
