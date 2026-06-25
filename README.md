@@ -7,6 +7,9 @@
 > Not a personal clone — Sophie is a stock avatar acting as Vincent's professional AI assistant.
 > She answers questions about his profile, skills, and projects in French.
 
+- **Frontend** — hosted on [Vercel](https://vercel.com) (React/Vite, `avatar/`)
+- **Backend** — hosted on [Render](https://render.com) (Node.js, `avatar/backend/`)
+
 
 # Realtime Video Avatar
 
