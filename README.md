@@ -1,4 +1,14 @@
-# Realtime Video Avatar (Tavus)
+
+## Live demo
+
+**Sophie** — AI secretary for Vincent Bommert, deployed at Phase 2:
+[https://ai-video-avatar-3wsj8hecu-vbs-projects-9f1b98c4.vercel.app/](https://ai-video-avatar-3wsj8hecu-vbs-projects-9f1b98c4.vercel.app/)
+
+> Not a personal clone — Sophie is a stock avatar acting as Vincent's professional AI assistant.
+> She answers questions about his profile, skills, and projects in French.
+
+
+# Realtime Video Avatar
 
 Build a realtime, lifelike video avatar of yourself: you type a question, and a talking-head video of
 you answers in real time, in your voice and personality. The avatar is powered by an LLM that knows
@@ -6,6 +16,7 @@ about you from a short bio you write.
 
 It uses [Tavus CVI](https://docs.tavus.io/sections/conversational-video-interface/overview-cvi)
 (Conversational Video Interface). For the technical deep-dive see [TAVUS.md](./TAVUS.md).
+
 
 ## The three phases
 
